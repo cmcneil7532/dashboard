@@ -6,6 +6,9 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import "./App.css";
 
 const App = () => {
+  {
+    /**Based on the boolean if true sidebar opens: false navbar is shown */
+  }
   const activeMenu = true;
 
   return (
@@ -32,7 +35,53 @@ const App = () => {
             </TooltipComponent>
             {/**Creating a side bar with a conditional whether the side bar is opened or not */}
           </div>
-          {activeMenu ? <div>SideBar</div> : <div>Sidebar w-0</div>}
+
+          {/**Based on the condtion if active menu is true the side will appear with a width of 18rem else no sidebar and width of 0 */}
+          {activeMenu ? (
+            <div className="w-72 fixed sidebar dark: bg-secondary-dark-bg bg-white">
+              SideBar
+            </div>
+          ) : (
+            <div className="w-0 dark:bg-secondary-dark-bg">w-0</div>
+          )}
+          <div
+            className={`dark: bg-main-bg bg-main-bg min-h-screen w-full ${
+              activeMenu ? "md:ml-72" : "flex-2"
+            }`}
+          >
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+              Navbar
+            </div>
+            {/**Implenting the Route package. Is a container for a nested tree of elements that renders the branch that best matches the current location. */}
+          </div>
+          <div>
+            <Routes>
+              {/**Dashboard render the Ecommerece page first and a secondary link */}
+              <Route path="/" element="ECommerece" />
+              <Route path="/ecommerece" element="ECommerece" />
+
+              {/**Pages */}
+              <Route path="/orders" element="Orders" />
+              <Route path="/employees" element="Emplyees" />
+              <Route path="/customers" element="Customers" />
+
+              {/**Apps */}
+              <Route path="/calender" element="Calender" />
+              <Route path="/kanban" element="Kanban" />
+              <Route path="/editor" element="Editor" />
+              <Route path="/color-picker" element="ColorPicker" />
+
+              {/**Charts */}
+              <Route path="/line" element="Line" />
+              <Route path="/area" element="Area" />
+              <Route path="/bar" element="Bar" />
+              <Route path="/pie" element="Pie" />
+              <Route path="/financial" element="Financial" />
+              <Route path="/color-mapping" element="ColorMapping" />
+              <Route path="/pyramid" element="Pyramid" />
+              <Route path="/stacked" element="Stacked" />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter>
     </div>
