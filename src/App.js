@@ -3,6 +3,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
+//Import individual components from components and pages folders
+import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import {
+  Ecommerece,
+  Orders,
+  Calender,
+  Employee,
+  Stacked,
+  Pyramid,
+  Customers,
+  Kanban,
+  Area,
+  ColorPicker,
+  Bar,
+  Pie,
+  Line,
+  ColorMapping,
+  Financial,
+  Editor,
+} from "./pages";
+
 import "./App.css";
 
 const App = () => {
@@ -20,7 +41,7 @@ const App = () => {
           {/**Creating a div thats fixed with bottom and top 4px */}
           {/**Creating the layout to the right 1rem and bottom 1rem and the AKA the bottom right of the page. And an index will ensure it doesnt get sent behind any other layers  */}
           <div className="fixed right-4 bottom-4 " style={{ zIndex: "1000" }}>
-            {/**Inject my tooltip packgage with props setting and potion top */}
+            {/**Inject my tooltip packgage with props setting and positon top */}
             <TooltipComponent content="Settings" position="Top">
               {/** Create a button using the icons package */}
               {/**Using tailwind to make the icon larger, padding 3px, hover over light gray background color and a shadow behind, and text white */}
@@ -39,47 +60,49 @@ const App = () => {
           {/**Based on the condtion if active menu is true the side will appear with a width of 18rem else no sidebar and width of 0 */}
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark: bg-secondary-dark-bg bg-white">
-              SideBar
+              <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">w-0</div>
+            <div className="w-0 dark:bg-secondary-dark-bg">
+              <Sidebar />
+            </div>
           )}
           <div
-            className={`dark: bg-main-bg bg-main-bg min-h-screen w-full ${
+            className={` dark: bg-main-bg bg-main-bg min-h-screen w-full ${
               activeMenu ? "md:ml-72" : "flex-2"
             }`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-              Navbar
+              <Navbar />
             </div>
             {/**Implenting the Route package. Is a container for a nested tree of elements that renders the branch that best matches the current location. */}
           </div>
           <div>
             <Routes>
               {/**Dashboard render the Ecommerece page first and a secondary link */}
-              <Route path="/" element="ECommerece" />
-              <Route path="/ecommerece" element="ECommerece" />
+              <Route path="/" element={<Ecommerece />} />
+              <Route path="/ecommerece" element={<Ecommerece />} />
 
               {/**Pages */}
-              <Route path="/orders" element="Orders" />
-              <Route path="/employees" element="Emplyees" />
-              <Route path="/customers" element="Customers" />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/employees" element={<Employee />} />
+              <Route path="/customers" element={<Customers />} />
 
               {/**Apps */}
-              <Route path="/calender" element="Calender" />
-              <Route path="/kanban" element="Kanban" />
-              <Route path="/editor" element="Editor" />
-              <Route path="/color-picker" element="ColorPicker" />
+              <Route path="/calender" element={<Calender />} />
+              <Route path="/kanban" element={<Kanban />} />
+              <Route path="/editor" element={<Editor />} />
+              <Route path="/color-picker" element={<ColorPicker />} />
 
               {/**Charts */}
-              <Route path="/line" element="Line" />
-              <Route path="/area" element="Area" />
-              <Route path="/bar" element="Bar" />
-              <Route path="/pie" element="Pie" />
-              <Route path="/financial" element="Financial" />
-              <Route path="/color-mapping" element="ColorMapping" />
-              <Route path="/pyramid" element="Pyramid" />
-              <Route path="/stacked" element="Stacked" />
+              <Route path="/line" element={<Line />} />
+              <Route path="/area" element={<Area />} />
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/financial" element={<Financial />} />
+              <Route path="/color-mapping" element={<ColorMapping />} />
+              <Route path="/pyramid" element={<Pyramid />} />
+              <Route path="/stacked" element={<Stacked />} />
             </Routes>
           </div>
         </div>
