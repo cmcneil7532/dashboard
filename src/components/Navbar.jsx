@@ -32,14 +32,12 @@ const NavButton = ({ title, customFunc, icon, dotColor, color }) => (
   </TooltipComponent>
 );
 
-const handleChange = "change";
-const handleClick = "click";
-
 const Navbar = () => {
   //Retrieve the active menu state
   //placing the paranthesis after teh useStateContext implies we are calling it as a hook.
 
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setClicked, handleClick } =
+    useStateContext();
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
@@ -49,18 +47,17 @@ const Navbar = () => {
         color="blue"
         icon={<AiOutlineMenu />}
       />
-
       <div className="flex">
         <NavButton
           title="Cart"
-          customFunc={() => handleChange("cart")}
+          customFunc={() => handleClick("cart")}
           color="blue"
           icon={<FiShoppingCart />}
         />
         <div className="flex">
           <NavButton
-            title="Cart"
-            customFunc={() => handleChange("chat")}
+            title="Chat"
+            customFunc={() => handleClick("chat")}
             //Creates the blue dot above the chat icon
             dotColor="#03C9D7"
             color="blue"
@@ -69,8 +66,9 @@ const Navbar = () => {
         </div>
         <div className="flex">
           <NavButton
-            title="Notifications"
-            customFunc={() => handleChange("notication")}
+            title="Notification"
+            customFunc={() => handleClick("notifications")}
+            //Creates the blue dot above the chat icon
             dotColor="#03C9D7"
             color="blue"
             icon={<RiNotification3Line />}
@@ -91,7 +89,13 @@ const Navbar = () => {
             <MdKeyboardArrowDown className="text-14 text-gray-400"></MdKeyboardArrowDown>
           </div>
         </TooltipComponent>
+        {/**Based on whether or not our isClick state has been clicked will rendor our pages */}
+        {isClicked.cart && <Cart />}
+        {isClicked.chat && <Chat />}
+        {isClicked.userProfile && <UserProfile />}
+        {isClicked.notifications && <Notifications />}
       </div>
+      {/**Based on whether or not our isClick state has been clicked will rendor our pages */}
     </div>
   );
 };
