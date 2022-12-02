@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsChatLeft } from "react-icons/bs";
-import { RiNotification3Line } from "react-icons/ri";
+import { RiNotification3Line, RiWindowLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import avatar from "../data/avatar.jpg";
@@ -36,8 +36,38 @@ const Navbar = () => {
   //Retrieve the active menu state
   //placing the paranthesis after teh useStateContext implies we are calling it as a hook.
 
-  const { activeMenu, setActiveMenu, isClicked, setClicked, handleClick } =
-    useStateContext();
+  const {
+    activeMenu,
+    setActiveMenu,
+    isClicked,
+    setClicked,
+    handleClick,
+    isScreenSize,
+    setScreenSize,
+  } = useStateContext();
+
+  // we want to figure out the initial screen size whenever our application in loaded
+  useEffect(() => {
+    //settin the setScreenSize to the measurements of the window usigng window.innerWidth
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    //addinf and event listenter to our window when the resize happens we want to set the setScreen size with our handleresize function
+    window.addEventListener("resize", handleResize);
+    //Call it to find intial width
+    handleResize();
+
+    //Very important when using the event listener you also want to remove the event listener
+    return window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // this useEffect will determine whether the side bar to rendor intially depending the width of the screensize is les than 900px it should not rendor
+  useEffect(() => {
+    if (isScreenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [isScreenSize]);
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
@@ -89,7 +119,7 @@ const Navbar = () => {
             <MdKeyboardArrowDown className="text-14 text-gray-400"></MdKeyboardArrowDown>
           </div>
         </TooltipComponent>
-        {/**Based on whether or not our isClick state has been clicked will rendor our pages */}
+        {/**Based on whether or not our isClick state has been clicked will rendor our page we clicked */}
         {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
         {isClicked.userProfile && <UserProfile />}

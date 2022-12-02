@@ -19,10 +19,20 @@ const ContextProvider = ({ children }) => {
   const handleClick = (clicked) => {
     setClicked({ ...initialState, [clicked]: true });
   };
+// Creaitng a state to determine our screen size our state will be undefined becuause we dont know intitally what our screen size is 
+  const [isScreenSize, setScreenSize] = useState(undefined);
 
   return (
     <StateContext.Provider
-      value={{ activeMenu, setActiveMenu, isClicked, setClicked, handleClick }}
+      value={{
+        activeMenu,
+        setActiveMenu,
+        isClicked,
+        setClicked,
+        handleClick,
+        isScreenSize,
+        setScreenSize,
+      }}
     >
       {/**Placing children inside the StateContext.Provider anythign wrapped inside the component will inherit the states. In this case active menu */}
       {children}
