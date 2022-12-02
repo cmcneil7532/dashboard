@@ -26,11 +26,13 @@ import {
 
 import "./App.css";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 const App = () => {
   {
     /**Based on the boolean if true sidebar opens: false navbar is shown */
   }
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div>
