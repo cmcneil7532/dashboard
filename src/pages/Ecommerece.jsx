@@ -59,8 +59,12 @@ const Ecommerece = () => {
           ))}
         </div>
       </div>
+
+      {/**Creating the Revenue portion on page */}
       <div className="flex gap-10 flex-qrap justify-center">
+        {/**entire the revenues potion will inherit this css styles */}
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-780 ">
+          {/**------FOCUS ON THE REVNUE TITILE --- */}
           <div className="flex justify-between">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <div className="flex items-center gap-4">
@@ -76,6 +80,52 @@ const Ecommerece = () => {
                 </span>
                 <span>Budget</span>
               </p>
+            </div>
+          </div>
+          {/**---------------------------------- */}
+          {/** Creating the budget and expenses display */}
+          <div className="mt-10 gap-10 flex-wrap flex justify-center">
+            {/**Implementing border to seperate values from our graph */}
+            <div className="border-r-2 border-color m-4 pr-10">
+              <div>
+                <p>
+                  <span className="text-xl font-semibold">$93,000</span>
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
+                    23%
+                  </span>
+                  <p className="mt-1 text-gray-400 text-md">Budget</p>
+                </p>
+              </div>
+              <div className="mt-10">
+                <p>
+                  <span className="text-xl font-semibold">$83,000</span>
+                  <p className="text-gray-400 text-md mt-1">Expenses</p>
+                </p>
+              </div>
+              {/**Creating the line chart */}
+              <div className="mt-5">
+                <SparkLine
+                  color="blue"
+                  id="line-sparkline"
+                  type="line"
+                  height="80px"
+                  currentColor="blue"
+                  width="250px"
+                  data={SparklineAreaData}
+                />
+              </div>
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  bgColor="blue"
+                  text="Download Report"
+                  borderRadius="10px"
+                  size="md"
+                />
+              </div>
+            </div>
+            <div>
+              <Stacked width="320px" height="360px" />
             </div>
           </div>
         </div>
