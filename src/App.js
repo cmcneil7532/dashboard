@@ -78,34 +78,35 @@ const App = () => {
               <Navbar />
             </div>
             {/**Implenting the Route package. Is a container for a nested tree of elements that renders the branch that best matches the current location. */}
-          </div>
-          <div>
-            <Routes>
-              {/**Dashboard render the Ecommerece page first and a secondary link */}
-              <Route path="/" element={<Ecommerece />} />
-              <Route path="/ecommerece" element={<Ecommerece />} />
 
-              {/**Pages */}
-              <Route path="/orders" element={<Orders />} />
-              <Route path="/employees" element={<Employee />} />
-              <Route path="/customers" element={<Customers />} />
+            <div>
+              <Routes>
+                {/**Dashboard render the Ecommerece page first and a secondary link */}
+                <Route path="/" element={<Ecommerece />} />
+                <Route path="/ecommerce" element={<Ecommerece />} />
 
-              {/**Apps */}
-              <Route path="/calender" element={<Calender />} />
-              <Route path="/kanban" element={<Kanban />} />
-              <Route path="/editor" element={<Editor />} />
-              <Route path="/color-picker" element={<ColorPicker />} />
+                {/**Pages */}
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/employees" element={<Employee />} />
+                <Route path="/customers" element={<Customers />} />
 
-              {/**Charts */}
-              <Route path="/line" element={<Line />} />
-              <Route path="/area" element={<Area />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/financial" element={<Financial />} />
-              <Route path="/color-mapping" element={<ColorMapping />} />
-              <Route path="/pyramid" element={<Pyramid />} />
-              <Route path="/stacked" element={<Stacked />} />
-            </Routes>
+                {/**Apps */}
+                <Route path="/calender" element={<Calender />} />
+                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/editor" element={<Editor />} />
+                <Route path="/color-picker" element={<ColorPicker />} />
+
+                {/**Charts */}
+                <Route path="/line" element={<Line />} />
+                <Route path="/area" element={<Area />} />
+                <Route path="/bar" element={<Bar />} />
+                <Route path="/pie" element={<Pie />} />
+                <Route path="/financial" element={<Financial />} />
+                <Route path="/color-mapping" element={<ColorMapping />} />
+                <Route path="/pyramid" element={<Pyramid />} />
+                <Route path="/stacked" element={<Stacked />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </BrowserRouter>

@@ -25,9 +25,8 @@ const NavButton = ({ title, customFunc, icon, dotColor, color }) => (
         // the position of our dot Color icon and color
         style={{ background: dotColor }}
         className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-      >
-        {icon}
-      </span>
+      />
+      {icon}
     </button>
   </TooltipComponent>
 );
@@ -57,7 +56,7 @@ const Navbar = () => {
     handleResize();
 
     //Very important when using the event listener you also want to remove the event listener
-    return window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // this useEffect will determine whether the side bar to rendor intially depending the width of the screensize is les than 900px it should not rendor
@@ -109,7 +108,7 @@ const Navbar = () => {
             className="flex items-center p-1 gap-2 cursor-pointer hover:bg-light-grey rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
-            <img src={avatar} className="w-8 h-8 rounded-full "></img>
+            <img src={avatar} className="w-8 h-8 rounded-full alt-user-profile"></img>
             <p>
               <span className="text-gray-400 text-14">Hi, </span>{" "}
               <span className="text-gray-400 font-bold text-14 ml-1  ">

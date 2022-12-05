@@ -10,7 +10,13 @@ import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, isScreenSize } = useStateContext();
+
+  const handleClosedSideBar = () => {
+    if (activeMenu !== undefined && isScreenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
 
   // Variable active link and normal link will have tailwind css code
   const activeLink =
@@ -30,7 +36,7 @@ const Sidebar = () => {
             {/** Styling the link click will reference homepage, display flex gap and margin-left 0.75rem, tracking-tight so letters are closer together and on dark mode the text and slate will change */}
             <Link
               to="/"
-              onClick={() => setActiveMenu(false)}
+              onClick={() => handleClosedSideBar}
               className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tight dark: text-white text-slate-900"
             >
               {/**SiShopware is a logo imported form react-icons */}
@@ -54,7 +60,7 @@ const Sidebar = () => {
           </div>
 
           <div className="mt-10">
-            {/**Loop over our links  which we imported  we are going to map over links and create a div which will only cary the title name*/}
+            {/**Loop over our links  which we imported  we are going to map over links and create a div which will only carry the title name*/}
             {links.map((item) => (
               <div key={item.title}>
                 <p className="text-gray-400 m-3 mt-4 uppercase">{item.title}</p>
@@ -63,7 +69,7 @@ const Sidebar = () => {
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}
-                    onClick={() => {}}
+                    onClick={handleClosedSideBar}
                     key={link.name}
                     // Our class name will be dynamic with class utilites injected depending on if the link is active
                     className={({ isActive }) =>
