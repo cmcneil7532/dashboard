@@ -8,7 +8,6 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerece,
   Orders,
-  Calender,
   Employee,
   Stacked,
   Pyramid,
@@ -22,6 +21,7 @@ import {
   ColorMapping,
   Financial,
   Editor,
+  Calendar,
 } from "./pages";
 
 import "./App.css";
@@ -90,8 +90,10 @@ const App = () => {
                 <Route path="/employees" element={<Employee />} />
                 <Route path="/customers" element={<Customers />} />
 
+                <Route path="/calendar" element={<Calendar />} />
+
                 {/**Apps */}
-                <Route path="/calender" element={<Calender />} />
+
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/color-picker" element={<ColorPicker />} />

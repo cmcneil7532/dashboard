@@ -11,7 +11,8 @@ export { default as Customers } from "./Customers";
 export { default as ColorPicker } from "./ColorPicker";
 export { default as Editor } from "./Editor";
 export { default as Kanban } from "./Kanban";
-export { default as Calender } from "./Calender";
+
 export { default as Employee } from "./Employee";
 export { default as Orders } from "./Orders";
 export { default as Ecommerece } from "./Ecommerece";
+export { default as Calendar } from "./Calendar";

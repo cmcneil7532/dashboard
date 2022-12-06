@@ -20,9 +20,9 @@ const Sidebar = () => {
 
   // Variable active link and normal link will have tailwind css code
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2";
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark: text-gray-200 dark:hover: text-black hover:bg-light-gray m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
 
   return (
     //On full screen side bar will have margin left 3px with a scroll and take the full screen. Medium devices scroll bar will be hidden and only show if necessary with overflow auto. Padding bottom 2.5rem
@@ -35,7 +35,7 @@ const Sidebar = () => {
           <div className="flex justify-between items-center">
             {/** Styling the link click will reference homepage, display flex gap and margin-left 0.75rem, tracking-tight so letters are closer together and on dark mode the text and slate will change */}
             <Link
-              to="/"
+              to="/ecommerce"
               onClick={() => handleClosedSideBar}
               className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tight dark: text-white text-slate-900"
             >
