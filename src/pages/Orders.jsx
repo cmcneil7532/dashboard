@@ -18,7 +18,7 @@ import { ordersData, ContextMenuItems, ordersGrid } from "../data/dummy";
 import { Header } from "../components";
 export const Orders = () => {
   return (
-    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
+    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl mt-24">
       <Header category="Page" title="Orders" />
       {/**Creating the grid template to look at orders */}
       {/**Pass in the orders data API inside the GridComponet */}

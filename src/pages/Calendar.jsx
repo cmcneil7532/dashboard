@@ -19,7 +19,7 @@ import { Header } from "../components";
 const Calendar = () => {
   return (
     //On regular devices margin of 2 and paddin of 2 on medium devices margin of 10 and padding of 10
-    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
+    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl mt-24">
       <Header category="App" title="Calendar" />
       <ScheduleComponent
         height="560px"
