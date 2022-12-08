@@ -80,6 +80,7 @@ const App = () => {
             {/**Implenting the Route package. Is a container for a nested tree of elements that renders the branch that best matches the current location. */}
 
             <div>
+              <ThemeSettings />
               <Routes>
                 {/**Dashboard render the Ecommerece page first and a secondary link */}
                 <Route path="/" element={<Ecommerece />} />
