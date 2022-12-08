@@ -7,6 +7,16 @@ import { themeColors } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const ThemeSettings = () => {
+  //use our state to determine the current color
+
+  const {
+    setColor,
+    currentMode,
+    setCurrentMode,
+    currentColor,
+    setThemeSettings,
+    setMode,
+  } = useStateContext();
   return (
     //Make half the website transparent in the background
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
@@ -16,7 +26,7 @@ const ThemeSettings = () => {
           <p className="font-semibold text-lg">Settings</p>
           <button
             type="button"
-            onClick={() => {}}
+            onClick={() => setThemeSettings(false)}
             style={{ color: "rgba(153,171,180)", borderRadius: "50%" }}
             className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
           >
@@ -34,8 +44,8 @@ const ThemeSettings = () => {
               name="theme"
               value="Light"
               className="cursor-pointer"
-              onChange={() => {}}
-              checked={true}
+              onChange={setMode}
+              checked={currentMode === "Light"}
             />
             <label htmlFor="light" className="ml-2 text-md cursor-pointer">
               Light
@@ -48,8 +58,9 @@ const ThemeSettings = () => {
               name="theme"
               value="Dark"
               className="cursor-pointer"
-              onChange={() => {}}
-              checked={true}
+              onChange={setMode}
+              //Check if it is dark
+              checked={currentMode === "Dark"}
             />
             <label htmlFor="dark" className="ml-2 text-md cursor-pointer">
               Dark
@@ -72,12 +83,15 @@ const ThemeSettings = () => {
                     //Here we are displaying the individual colors we looped over
                     style={{ backgroundColor: item.color }}
                     className="rounded-full h-10 w-10 cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => {
+                      setColor(item.color);
+                    }}
                   >
                     {/**Check to see if the color is currently active or not not */}
                     <BsCheck
                       className={`ml-2 text-white text-2xl ${
-                        false ? "block" : "hidden"
+                        //will see the check mark only on the current color
+                        item.color === currentColor ? "block" : "hidden"
                       }`}
                     />
                   </button>

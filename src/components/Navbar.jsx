@@ -43,6 +43,7 @@ const Navbar = () => {
     handleClick,
     isScreenSize,
     setScreenSize,
+    currentColor,
   } = useStateContext();
 
   // we want to figure out the initial screen size whenever our application in loaded
@@ -73,14 +74,14 @@ const Navbar = () => {
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prevActiveState) => !prevActiveState)}
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
         <NavButton
           title="Cart"
           customFunc={() => handleClick("cart")}
-          color="blue"
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <div className="flex">
@@ -89,7 +90,7 @@ const Navbar = () => {
             customFunc={() => handleClick("chat")}
             //Creates the blue dot above the chat icon
             dotColor="#03C9D7"
-            color="blue"
+            color={currentColor}
             icon={<BsChatLeft />}
           />
         </div>
@@ -99,7 +100,7 @@ const Navbar = () => {
             customFunc={() => handleClick("notifications")}
             //Creates the blue dot above the chat icon
             dotColor="#03C9D7"
-            color="blue"
+            color={currentColor}
             icon={<RiNotification3Line />}
           />
         </div>
@@ -108,7 +109,10 @@ const Navbar = () => {
             className="flex items-center p-1 gap-2 cursor-pointer hover:bg-light-grey rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
-            <img src={avatar} className="w-8 h-8 rounded-full alt-user-profile"></img>
+            <img
+              src={avatar}
+              className="w-8 h-8 rounded-full alt-user-profile"
+            ></img>
             <p>
               <span className="text-gray-400 text-14">Hi, </span>{" "}
               <span className="text-gray-400 font-bold text-14 ml-1  ">

@@ -12,6 +12,7 @@ import {
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerece = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-24">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -23,7 +24,7 @@ const Ecommerece = () => {
               <button className="mt-6">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download"
                   borderRadius="10px"
                   size="md"
@@ -105,11 +106,11 @@ const Ecommerece = () => {
               {/**Creating the line chart */}
               <div className="mt-5">
                 <SparkLine
-                  color="blue"
+                  color={currentColor}
                   id="line-sparkline"
                   type="line"
                   height="80px"
-                  currentColor="blue"
+                  currentColor={currentColor}
                   width="250px"
                   data={SparklineAreaData}
                 />
@@ -117,7 +118,7 @@ const Ecommerece = () => {
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                   size="md"

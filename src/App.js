@@ -32,7 +32,7 @@ const App = () => {
   {
     /**Based on the boolean if true sidebar opens: false navbar is shown */
   }
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
 
   return (
     <div>
@@ -52,6 +52,8 @@ const App = () => {
                 type="button"
                 className="text-3xl p-3 hover:bg-light-gray hover: drop-shadow-xl text-white"
                 style={{ background: "blue", borderRadius: "50%" }}
+                //Set the the settings button to open and close
+                onClick={() => setThemeSettings(true)}
               >
                 <FiSettings />
               </button>
@@ -80,7 +82,8 @@ const App = () => {
             {/**Implenting the Route package. Is a container for a nested tree of elements that renders the branch that best matches the current location. */}
 
             <div>
-              <ThemeSettings />
+              {/**will only themesettings when set to true */}
+              {themeSettings && <ThemeSettings />}
               <Routes>
                 {/**Dashboard render the Ecommerece page first and a secondary link */}
                 <Route path="/" element={<Ecommerece />} />

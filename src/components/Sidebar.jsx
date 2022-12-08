@@ -10,7 +10,8 @@ import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, isScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, isScreenSize, currentColor } =
+    useStateContext();
 
   const handleClosedSideBar = () => {
     if (activeMenu !== undefined && isScreenSize <= 900) {
@@ -75,6 +76,9 @@ const Sidebar = () => {
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : " ",
+                    })}
                   >
                     {link.icon}
                     <span className="capitalize">{link.name}</span>
