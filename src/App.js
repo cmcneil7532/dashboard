@@ -32,10 +32,16 @@ const App = () => {
   {
     /**Based on the boolean if true sidebar opens: false navbar is shown */
   }
-  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+  } = useStateContext();
 
   return (
-    <div>
+    <div className={currentMode === "Dark" ? "dark" : ""}>
       {/**Importing browser router package into App component*/}
       <BrowserRouter>
         {/**Creating a div thats relative usig tailwind css to change the background on dark mode */}
@@ -51,7 +57,10 @@ const App = () => {
               <button
                 type="button"
                 className="text-3xl p-3 hover:bg-light-gray hover: drop-shadow-xl text-white"
-                style={{ background: "blue", borderRadius: "50%" }}
+                style={{
+                  background: currentColor,
+                  borderRadius: "50%",
+                }}
                 //Set the the settings button to open and close
                 onClick={() => setThemeSettings(true)}
               >
@@ -72,7 +81,7 @@ const App = () => {
             </div>
           )}
           <div
-            className={` dark: bg-main-bg bg-main-bg min-h-screen w-full ${
+            className={` dark: bg-main-bg bg-main-bg min-h-screen w-full dark:bg-main-dark-bg ${
               activeMenu ? "md:ml-72" : "flex-2"
             }`}
           >

@@ -19,7 +19,9 @@ const Ecommerece = () => {
         <div className="dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl bg-cyan-200 n lg w-full lg:w-80 p-8 pt-9 m-3 bg-light-grey bg-no-repeat bg-cover bg-center ">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-xl text-stone-900">Earnings</p>
+              <p className="font-xl text-stone-900 dark:text-gray-400">
+                Earnings
+              </p>
               <p className="text-2xl ">$900,555</p>
               <button className="mt-6">
                 <Button
@@ -66,14 +68,14 @@ const Ecommerece = () => {
         {/**entire the revenues potion will inherit this css styles */}
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-780 ">
           {/**------FOCUS ON THE REVNUE TITILE --- */}
-          <div className="flex justify-between">
+          <div className="flex justify-between p-2 md:p-10">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-lg">
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Expense</span>
+                <span className="dark:text-gray-400">Expense</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
@@ -125,7 +127,7 @@ const Ecommerece = () => {
                 />
               </div>
             </div>
-            <div>
+            <div className="mb-5">
               <Stacked width="320px" height="360px" />
             </div>
           </div>

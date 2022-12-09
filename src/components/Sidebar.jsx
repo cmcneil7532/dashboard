@@ -27,7 +27,7 @@ const Sidebar = () => {
 
   return (
     //On full screen side bar will have margin left 3px with a scroll and take the full screen. Medium devices scroll bar will be hidden and only show if necessary with overflow auto. Padding bottom 2.5rem
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 dark:bg-secondary-dark-bg">
       {/**Usign a condtional to determine whether activemenu is true*/}
       {activeMenu && (
         // create a div which will hace a link
@@ -38,7 +38,7 @@ const Sidebar = () => {
             <Link
               to="/ecommerce"
               onClick={() => handleClosedSideBar}
-              className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tight dark: text-white text-slate-900"
+              className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
               {/**SiShopware is a logo imported form react-icons */}
               <SiShopware />
