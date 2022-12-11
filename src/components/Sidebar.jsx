@@ -13,6 +13,7 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu, isScreenSize, currentColor } =
     useStateContext();
 
+  //If the screen size is less than 900px dont show the side bar at all
   const handleClosedSideBar = () => {
     if (activeMenu !== undefined && isScreenSize <= 900) {
       setActiveMenu(false);

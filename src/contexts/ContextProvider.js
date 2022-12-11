@@ -27,6 +27,7 @@ const ContextProvider = ({ children }) => {
   //Our website will be default to light mode
   const [currentMode, setCurrentMode] = useState("Light");
   const [themeSettings, setThemeSettings] = useState(false);
+  //Our cart page will intiliaze as false or closed
 
   // we will have a setMode which will take an event and change the setting based on what is clicked
   const setMode = (e) => {

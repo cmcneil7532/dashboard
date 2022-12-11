@@ -4,7 +4,7 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 //Import individual components from components and pages folders
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Footer, Sidebar, ThemeSettings, Cart } from "./components";
 import {
   Ecommerece,
   Orders,
@@ -38,6 +38,8 @@ const App = () => {
     setThemeSettings,
     currentColor,
     currentMode,
+    open,
+    setOpen,
   } = useStateContext();
 
   return (
@@ -93,6 +95,7 @@ const App = () => {
             <div>
               {/**will only themesettings when set to true */}
               {themeSettings && <ThemeSettings />}
+              {setOpen && <Cart />}
               <Routes>
                 {/**Dashboard render the Ecommerece page first and a secondary link */}
                 <Route path="/" element={<Ecommerece />} />

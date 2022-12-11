@@ -112,7 +112,7 @@ const Navbar = () => {
             <img
               src={avatar}
               className="w-8 h-8 rounded-full alt-user-profile"
-            ></img>
+            />
             <p>
               <span className="text-gray-400 text-14">Hi, </span>{" "}
               <span className="text-gray-400 font-bold text-14 ml-1  ">
@@ -128,7 +128,6 @@ const Navbar = () => {
         {isClicked.userProfile && <UserProfile />}
         {isClicked.notifications && <Notifications />}
       </div>
-      {/**Based on whether or not our isClick state has been clicked will rendor our pages */}
     </div>
   );
 };

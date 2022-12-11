@@ -604,18 +604,21 @@ export const cartData = [
     name: "butterscotch ice-cream",
     category: "Milk product",
     price: "$250",
+    quanity: 0,
   },
   {
     image: product6,
     name: "Supreme fresh tomato",
     category: "Vegetable Item",
     price: "$450",
+    quanity: 0,
   },
   {
     image: product7,
     name: "Red color candy",
     category: "Food Item",
     price: "$190",
+    quanity: 0,
   },
 ];
 
