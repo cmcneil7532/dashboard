@@ -18,7 +18,7 @@ import { useStateContext } from "../../contexts/ContextProvider";
 const Pyramid = () => {
   const { currentMode } = useStateContext();
   return (
-    <div>
+    <div className="mt-24 p-2 m-2 md:p-10 md:m-10 rounded-3xl bg-white">
       <Header category="Chart" title="Food Pyramid" />
       <AccumulationChartComponent
         id="Chart"
