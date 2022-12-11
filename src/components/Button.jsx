@@ -1,18 +1,30 @@
 import React from "react";
-import { IoIosConstruct } from "react-icons/io";
+
 import { useStateContext } from "../contexts/ContextProvider";
 
-const Button = ({ color, bgColor, borderRadius, size, text, icon }) => {
-  const { setClicked, inititalState } = useStateContext();
+const Button = ({
+  icon,
+  bgColor,
+  color,
+  bgHoverColor,
+  size,
+  text,
+  borderRadius,
+  width,
+}) => {
+  const { setClicked, initialState } = useStateContext();
+
   return (
-    <button
-      type="button"
-      onClick={() => setClicked(inititalState)}
-      style={{ backgroundColor: bgColor, color, borderRadius }}
-      className={`text-${size} p-3 hover:drop-shadow-xl`}
-    >
-      {text} {icon}
-    </button>
+    <div>
+      <button
+        type="button"
+        onClick={() => setClicked(initialState)}
+        style={{ backgroundColor: bgColor, color, borderRadius }}
+        className={` text-${size} p-3 w-${width} hover:drop-shadow-xl hover:bg-${bgHoverColor}`}
+      >
+        {icon} {text}
+      </button>
+    </div>
   );
 };
 

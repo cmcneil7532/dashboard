@@ -59,13 +59,12 @@ const ContextProvider = ({ children }) => {
         isScreenSize,
         setScreenSize,
         currentColor,
-
         currentMode,
-
         themeSettings,
         setThemeSettings,
         setMode,
         setColor,
+        initialState,
       }}
     >
       {/**Placing children inside the StateContext.Provider anythign wrapped inside the component will inherit the states. In this case active menu */}
