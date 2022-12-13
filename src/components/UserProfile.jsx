@@ -9,7 +9,7 @@ import github from "../data/github.svg";
 const UserProfile = () => {
   const { currentColor } = useStateContext();
   return (
-    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
+    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96 dark:text-white">
       <div className="flex justify-between items-center">
         <p>User Profile</p>
         <Button icon={<MdOutlineCancel />} />
@@ -44,7 +44,7 @@ const UserProfile = () => {
       {userProfileData.map((item, index) => (
         <div
           key={index}
-          className=" flex gap-3 border-t-1 border-color p-3 hover:bg-light-gray hover:cursor-pointer"
+          className=" flex gap-3 border-t-1 border-color p-3 hover:bg-light-gray hover:cursor-pointer dark:hover:bg-gray-400 rounded-lg"
         >
           {/**Created a button with dyanmic in-style */}
           <button
