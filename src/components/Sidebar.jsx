@@ -71,6 +71,7 @@ const Sidebar = () => {
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}
+                    //EveryTime you click on a page the sidebar will automaticallly close
                     onClick={handleClosedSideBar}
                     key={link.name}
                     // Our class name will be dynamic with class utilites injected depending on if the link is active

@@ -16,6 +16,7 @@ const ContextProvider = ({ children }) => {
 
   // our click will be set false for all nav buttons
   const [isClicked, setClicked] = useState(initialState);
+
   // just returning clicked will return the whole object so destructing the object to only change a specific property is will be our soution
   const handleClick = (clicked) => {
     setClicked({ ...initialState, [clicked]: true });
