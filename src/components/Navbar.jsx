@@ -70,7 +70,7 @@ const Navbar = () => {
   }, [isScreenSize]);
 
   return (
-    <div className="flex justify-between p-2 md:mx-6 relative">
+    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prevActiveState) => !prevActiveState)}
@@ -84,26 +84,22 @@ const Navbar = () => {
           color={currentColor}
           icon={<FiShoppingCart />}
         />
-        <div className="flex">
-          <NavButton
-            title="Chat"
-            customFunc={() => handleClick("chat")}
-            //Creates the blue dot above the chat icon
-            dotColor="#03C9D7"
-            color={currentColor}
-            icon={<BsChatLeft />}
-          />
-        </div>
-        <div className="flex">
-          <NavButton
-            title="Notification"
-            customFunc={() => handleClick("notifications")}
-            //Creates the blue dot above the chat icon
-            dotColor="#03C9D7"
-            color={currentColor}
-            icon={<RiNotification3Line />}
-          />
-        </div>
+        <NavButton
+          title="Chat"
+          customFunc={() => handleClick("chat")}
+          //Creates the blue dot above the chat icon
+          dotColor="#03C9D7"
+          color={currentColor}
+          icon={<BsChatLeft />}
+        />
+        <NavButton
+          title="Notification"
+          customFunc={() => handleClick("notifications")}
+          //Creates the blue dot above the chat icon
+          dotColor="#03C9D7"
+          color={currentColor}
+          icon={<RiNotification3Line />}
+        />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center p-1 gap-2 cursor-pointer hover:bg-light-grey rounded-lg"
