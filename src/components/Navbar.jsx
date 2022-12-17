@@ -5,7 +5,7 @@ import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line, RiWindowLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import avatar from "../data/avatar.jpg";
+import christian from "../data/christian.jpg";
 
 import { Cart, Chat, Notifications, UserProfile } from ".";
 
@@ -106,7 +106,7 @@ const Navbar = () => {
             onClick={() => handleClick("userProfile")}
           >
             <img
-              src={avatar}
+              src={christian}
               className="w-8 h-8 rounded-full alt-user-profile"
             />
             <p>

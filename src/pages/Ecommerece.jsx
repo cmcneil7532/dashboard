@@ -14,6 +14,10 @@ import {
   recentTransactions,
 } from "../data/dummy";
 
+import christian from '../data/christian.jpg'
+
+
+
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerece = () => {
@@ -271,6 +275,13 @@ const Ecommerece = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+          {/** Create the about me section */}
+          <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200 p-5 md:w-400 m-3 rounded-2xl">
+            <div className="flex justify-center items-center gap-2">
+              <p className="font-semibold text-xl">Summary</p>
+                <img src={christian}/>
             </div>
           </div>
         </div>

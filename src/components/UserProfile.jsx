@@ -2,7 +2,7 @@ import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import Button from "./Button";
 import { userProfileData } from "../data/dummy";
-import avatar from "../data/avatar.jpg";
+import christian from "../data/christian.jpg";
 import { useStateContext } from "../contexts/ContextProvider";
 import linkedin from "../data/linkedin.svg";
 import github from "../data/github.svg";
@@ -17,7 +17,7 @@ const UserProfile = () => {
       <div className="mt-4 flex ">
         <div>
           <img
-            src={avatar}
+            src={christian}
             className="rounded-full w-20 h-30 hover:drop-shadow-md"
             alt="user-profile"
           />
