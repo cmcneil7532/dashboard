@@ -219,13 +219,13 @@ const Ecommerece = () => {
               </div>
             ))}
           </div>
-          {/**Creating the medicak pro banding panel */}
+          {/**Creating the medical pro banding panel */}
           <div className="w-400 p-5 m-3 rounded-2xl dark:bg-secondary-dark-bg bg-white dark:text-gray-200">
             <div className="flex justify-between items-center gap-2">
               <p className="font-semibold text-xl"> Medical Pro Banding</p>
               <IoIosMore />
             </div>
-            <div className="">
+            <div>
               <button
                 type="button"
                 style={{ backgroundColor: "orange" }}
@@ -256,6 +256,17 @@ const Ecommerece = () => {
                       >
                         {item.name}
                       </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/**Creatin of the leaders section */}
+              <div className="border-b-1 border-color pb-3 mt-2">
+                <p className="font-semibold text-lg mb-2">Leaders</p>
+                <div className="flex gap-4">
+                  {medicalproBranding.leaders.map((item, index) => (
+                    <div key={index}>
+                      <img class="h-10 w-10 rounded-full" src={item.image} />
                     </div>
                   ))}
                 </div>
