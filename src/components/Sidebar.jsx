@@ -28,7 +28,7 @@ const Sidebar = () => {
 
   return (
     //On full screen side bar will have margin left 3px with a scroll and take the full screen. Medium devices scroll bar will be hidden and only show if necessary with overflow auto. Padding bottom 2.5rem
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 dark:bg-secondary-dark-bg">
+    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 dark:bg-secondary-dark-bg">
       {/**Usign a condtional to determine whether activemenu is true*/}
       {activeMenu && (
         // create a div which will hace a link
