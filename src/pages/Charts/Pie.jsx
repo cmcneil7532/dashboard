@@ -23,7 +23,7 @@ const Pie = () => {
       <AccumulationChartComponent
         id="pie"
         tooltip={{ enable: true }}
-        background={currentMode === "Dark" ? "#333735" : "#fff"}
+        background={currentMode === "Dark" ? "#33373E" : "#fff"}
       >
         <Inject
           services={[AccumulationDataLabel, AccumulationTooltip, PieSeries]}

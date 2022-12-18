@@ -14,9 +14,7 @@ import {
   recentTransactions,
 } from "../data/dummy";
 
-import christian from '../data/christian.jpg'
-
-
+import christian from "../data/christian.jpg";
 
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -90,7 +88,6 @@ const Ecommerece = () => {
           ))}
         </div>
       </div>
-
       {/**Creating the Revenue portion on page */}
       <div className="flex gap-10 flex-wrap justify-center">
         {/**entire the revenues potion will inherit this css styles */}
@@ -279,13 +276,20 @@ const Ecommerece = () => {
           </div>
           {/** Create the about me section */}
           <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-200 p-5 md:w-400 m-3 rounded-2xl">
-            <div className="flex justify-center items-center gap-2">
-              <p className="font-semibold text-xl">Summary</p>
-                <img src={christian}/>
+            <div className="flex justify-center items-center border-b-1 border-color">
+              <p className="font-semibold text-xl mb-3">Summary</p>
+            </div>
+            <div className="flex justify-center items-center mt-2">
+              <img src={christian} className="h-400 w-40" />
+              
+            </div>
+            <div className="flex justify-center items-center mt-2">
+             <p className="gap-3 ">My name is Christian McNeil and I'm an aspiring self-taught front-end developer. Welcome to my Dashboard project it includes various charts, color changes, calenders, and many more components! All compoments also work on full size and mobile devices. Enjoy! </p>
             </div>
           </div>
         </div>
       </div>
+      s
     </div>
   );
 };

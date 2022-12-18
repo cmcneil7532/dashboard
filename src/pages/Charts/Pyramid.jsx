@@ -18,12 +18,12 @@ import { useStateContext } from "../../contexts/ContextProvider";
 const Pyramid = () => {
   const { currentMode } = useStateContext();
   return (
-    <div className="mt-24 p-2 m-2 md:p-10 md:m-10 rounded-3xl bg-white">
+    <div className="mt-24 p-2 m-2 md:p-10 md:m-10 rounded-3xl bg-white dark:bg-secondary-dark-bg">
       <Header category="Chart" title="Food Pyramid" />
       <AccumulationChartComponent
         id="Chart"
         tooltip={{ enable: true }}
-        background={currentMode === "Dark" ? "#333735" : "#fff"}
+        background={currentMode === "Dark" ? "#33373E" : "#fff"}
         legendSettings={{ background: "white", title: "Food" }}
       >
         <Inject

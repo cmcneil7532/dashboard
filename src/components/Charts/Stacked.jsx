@@ -15,8 +15,10 @@ import {
   stackedPrimaryXAxis,
   stackedPrimaryYAxis,
 } from "../../data/dummy";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const Stacked = ({ width, height }) => {
+  const {currentMode} = useStateContext()
   return (
     <ChartComponent
       id="charts"
@@ -28,6 +30,7 @@ const Stacked = ({ width, height }) => {
       chartArea={{ border: { width: 0 } }}
       //toolTip enabling allows the user to hover over each column to get greater detail of month
       tooltip={{ enable: true }}
+      background={currentMode === 'Dark' ? '#33373E': '#fff'}
       legendSettings={{ background: "white" }}
     >
       {/**ALWAYS USE THE INJECT COMPONENT TO RENDER YOUR GRAPHS WHEN USING SYNCFUSION */}

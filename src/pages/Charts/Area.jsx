@@ -31,8 +31,9 @@ const Area = () => {
         primaryYAxis={areaPrimaryYAxis}
         //Hover over each point to get mpre precise deatils
         tooltip={{ enable: true }}
-        background={currentMode === "Dark" ? "#333735" : "#fff"}
+        background={currentMode === "Dark" ? "#33373E" : "#fff"}
         chartArea={{ border: { width: 0 } }}
+        legendSettings={{background:'white'}}
       >
         <Inject services={[DateTime, Legend, SplineAreaSeries]} />
 

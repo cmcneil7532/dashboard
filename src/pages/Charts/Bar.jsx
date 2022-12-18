@@ -8,6 +8,7 @@ import {
   ColumnSeries,
   DataLabel,
   Tooltip,
+  Legend
 } from "@syncfusion/ej2-react-charts";
 
 import {
@@ -32,10 +33,11 @@ const Bar = () => {
         primaryYAxis={barPrimaryYAxis}
         //Hover over each point to get mpre precise deatils
         tooltip={{ enable: true }}
-        background={currentMode === "Dark" ? "#333735" : "#fff"}
+        background={currentMode === "Dark" ? "#33373E" : "#fff"}
         chartArea={{ border: { width: 0 } }}
+        legendSettings={{background: 'white'}}
       >
-        <Inject services={[Category, ColumnSeries, Tooltip, DataLabel]} />
+        <Inject services={[Category, ColumnSeries, Tooltip, DataLabel, Legend]} />
 
         <SeriesCollectionDirective>
           {barCustomSeries.map((item, index) => (

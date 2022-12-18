@@ -27,7 +27,7 @@ const ColorMapping = () => {
   //Inject my useStateContext to determine our dark or light mode
   const { currentMode } = useStateContext();
   return (
-    <div className="m-4 p-10 md:m-10 mt-24n bg-white dark:bg-secondary-dark-bg">
+    <div className="m-4 p-10 md:m-10 mt-24n bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <Header category="Chart" title="ColorMapping" />
       <ChartComponent
         primaryXAxis={ColorMappingPrimaryXAxis}
@@ -35,7 +35,7 @@ const ColorMapping = () => {
         id="Chart"
         legendSettings={{ mode: "Range", background: "white" }}
         tooltip={{ enable: true }}
-        background={currentMode === "Dark" ? "#333735" : "#fff"}
+        background={currentMode === "Dark" ? "#33373E" : "#fff"}
       >
         <Inject services={[ColumnSeries, Tooltip, Legend, Category]} />
 
